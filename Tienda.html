@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Los Motes de Benito</title>
+</head>
+<body>
+<h1>Los Motes de Benito - Tienda Online</h1>
+Cualquier plato a $0.50: choclomote,con chicharrón
+
+<TABLE >
+<TD WIDTH=100>
+<img src="mote.png">
+</TD>
+<TD >
+<label>Nombre:</label> <input type="text" id="Nombre" value=" "></input>
+<br>
+<label>#de choclomotes:</label> <input type="text" id="txt_cho" value="0" onchange="obtenerSuma();" onchange="centavos();" ></input>
+<br>
+<label>#de con chicharrón:</label> <input type="text" id="txt_chi" value="0" onchange="obtenerSuma();" ></input>
+<br>
+<label>En cuantos minutos viene por su pedido:</label> 
+<input type="text" id="tiempo" value="0"></input>
+<br>
+<label>Subtotal:</label> <input type="text" id="st" value="0" 
+onchange="obtenerSuma();"></input>
+<br>
+<label>IVA 12%:</label> <input type="text" id="iva" value="0" 
+onchange="obtenerSuma();"></input>
+<br>
+<label>Total:</label> <input type="text" id="total" value="0" 
+onchange="obtenerSuma();"></input>
+</TD>
+</TABLE>
+
+<script type="text/javascript">
+
+function obtenerSuma()
+            {
+                document.getElementById('st').value=parseFloat(document.getElementById('txt_cho').value)+parseFloat(document.getElementById('txt_chi').value);
+
+                
+                document.getElementById('iva').value=parseFloat(document.getElementById('st').value)*0.12;
+
+           
+                document.getElementById('total').value=parseFloat(document.getElementById('st').value)+parseFloat(document.getElementById('iva').value);
+
+            }
+  
+</script>
+</body>
+</html>
